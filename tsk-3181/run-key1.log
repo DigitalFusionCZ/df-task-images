@@ -1,0 +1,24 @@
+start 2026-11-14T12:06:55Z commit bd8fb72
+NOTICE:  database "learnode_smoke_tsk3181" does not exist, skipping
+psql:migrations/017_source_passage_search.sql:19: NOTICE:  extension "unaccent" already exists, skipping
+Muse append-thread request failed with HTTP 401: This API key has expired. Create a new API key in OpenCode Console and replace it in your client or secret store. Signing in again will not renew this key. Manage your API keys at https://opencode.ai/console/account#api-keys. 
+ Error: Muse append-thread request failed with HTTP 401: This API key has expired. Create a new API key in OpenCode Console and replace it in your client or secret store. Signing in again will not renew this key. Manage your API keys at https://opencode.ai/console/account#api-keys.
+    at readProviderJson (/workspace/learnode/src/sources/deepseek-source-append-thread-extractor.ts:165:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async MuseSourceAppendThreadExtractor.complete (/workspace/learnode/src/sources/muse-source-append-thread-extractor.ts:112:14)
+    at async MuseSourceAppendThreadExtractor.completeWithRetry (/workspace/learnode/src/sources/deepseek-source-append-thread-extractor.ts:442:16)
+    at async MuseSourceAppendThreadExtractor.extractAppendThreadTurn (/workspace/learnode/src/sources/deepseek-source-append-thread-extractor.ts:341:30)
+    at async <anonymous> (/workspace/learnode/node_modules/.pnpm/@dbos-inc+dbos-sdk@4.22.6/node_modules/@dbos-inc/dbos-sdk/src/dbos-executor.ts:858:21)
+    at async runWithParentContext (/workspace/learnode/node_modules/.pnpm/@dbos-inc+dbos-sdk@4.22.6/node_modules/@dbos-inc/dbos-sdk/src/context.ts:122:10)
+    at async runInStepContext (/workspace/learnode/node_modules/.pnpm/@dbos-inc+dbos-sdk@4.22.6/node_modules/@dbos-inc/dbos-sdk/src/context.ts:165:10)
+    at async <anonymous> (/workspace/learnode/node_modules/.pnpm/@dbos-inc+dbos-sdk@4.22.6/node_modules/@dbos-inc/dbos-sdk/src/dbos-executor.ts:856:9)
+    at async invokeStepAttempt (/workspace/learnode/node_modules/.pnpm/@dbos-inc+dbos-sdk@4.22.6/node_modules/@dbos-inc/dbos-sdk/src/dbos-executor.ts:862:9)
+learnode smoke:upload  scenario-f.pdf  84960 B  model (none)  recipe source-extraction@v4
+preview   pages 32  chars 95589  estimate 0.0320 USD (configured)
+result    state failed  error: Processing stopped before the end. Retry continues where it stopped; finished parts are not paid again.  2.5 s  waited_for_model false
+graph     concepts 0  relations 0  (progress: 0 concepts, 0 relations, 0/9 parts)
+model     0 calls  cost 0.00000 USD (cap 1)  metered {}
+ledger    {"error":1}  input 0  cached 0 (0 %)  cost 0.00000 USD
+steps     meter-run 1x  duplicate steps none
+SMOKE FAILED: state is failed, expected ready; no concepts in the graph; no provider usage recorded (provider was not called?)
+exit=1 end 2026-11-14T12:06:59Z
